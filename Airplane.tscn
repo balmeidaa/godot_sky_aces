@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/models/Plane02.vox" type="ArrayMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 4.32775
+height = 24.8298
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 4.61073, 3.54172, 13.798 )
+
+[node name="KinematicBody" type="KinematicBody"]
+
+[node name="CollisionBody" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.343732, 0.510029, 3.96333 )
+shape = SubResource( 1 )
+
+[node name="CollisionWings" type="CollisionShape" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.13362, 1.57674, -1.005 )
+visible = false
+shape = SubResource( 2 )
+
+[node name="Plane02" type="MeshInstance" parent="."]
+transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0, -6.37646, 2.61585 )
+mesh = ExtResource( 1 )
+material/0 = null

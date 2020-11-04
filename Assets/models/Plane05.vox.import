@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/Plane05.vox-e505a5cbdbf58178c03ca6f30e216709.mesh"
+
+[deps]
+
+source_file="res://Assets/models/Plane05.vox"
+dest_files=[ "res://.import/Plane05.vox-e505a5cbdbf58178c03ca6f30e216709.mesh" ]
+
+[params]
+
