@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Airplane.tscn" type="PackedScene" id=1]
-[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/models/Plane_06.vox" type="ArrayMesh" id=2]
+[ext_resource path="res://player.gd" type="Script" id=3]
 
 [node name="Main" type="Spatial"]
+script = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 17.6355, 9.16375, 1.50487 )
-script = ExtResource( 2 )
+[node name="Plane" parent="." instance=ExtResource( 1 )]
 
-[node name="Target" type="Spatial" parent="Player"]
+[node name="Target" type="Spatial" parent="Plane"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-07, 2.00074, 3.59408 )
 
-[node name="InterpolatedCamera" type="InterpolatedCamera" parent="Player"]
-transform = Transform( 1, 0, 8.52651e-14, 0, 1, 0, -8.52651e-14, 0, 1, -2.98023e-06, 10.6938, 21.0082 )
-fov = 80.0
+[node name="Camera" type="InterpolatedCamera" parent="Plane"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-06, 11.9074, 47.4967 )
+fov = 69.0
+size = 0.1
+near = 0.01
+far = 800.0
+
+[node name="Plane_06" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.63856, 6.21032, -140.667 )
+mesh = ExtResource( 2 )
+material/0 = null
