@@ -8,6 +8,7 @@
 script = ExtResource( 3 )
 
 [node name="Plane" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.5239, 61.1917 )
 
 [node name="Target" type="Spatial" parent="Plane"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-07, 2.00074, 3.59408 )

@@ -1,14 +1,12 @@
 extends Node
 const MAX_CAM_ANGLE = 30
 var rotate = 0
-var thrust = 0
+var thrust = 0.5
 
 func _physics_process(delta):
     if Input.is_action_pressed("fire"):
-
         $Plane.fire_weapon()
     if Input.is_action_pressed("ui_up"):
-        print('Ok')
         thrust += delta
     if Input.is_action_pressed("ui_down"):
         thrust -= delta
@@ -17,7 +15,7 @@ func _physics_process(delta):
     if Input.is_action_pressed("ui_right"):
         rotate += delta
     
-    thrust = clamp(thrust, 0.1, 1)
+    thrust = clamp(thrust, 0.2, 1)
     rotate = clamp(rotate, -1, 1)
     $Plane.calc_force(thrust, rotate)  
 #	if Input.is_action_pressed("ui_rudder_left"):
