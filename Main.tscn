@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Airplane.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/shaders/toon.tres" type="Material" id=2]
 [ext_resource path="res://player.gd" type="Script" id=3]
 [ext_resource path="res://Assets/models/Plane06.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://DebugStats.gd" type="Script" id=5]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 3 )
@@ -30,3 +31,17 @@ material/0 = ExtResource( 2 )
 transform = Transform( 0.707107, 0, 0.707107, -0.0645784, -0.995821, 0.0645784, 0.704152, -0.0913277, -0.704152, 0, 500, 0 )
 light_energy = 0.2
 light_indirect_energy = 0.5
+
+[node name="DebugStats" type="MarginContainer" parent="."]
+margin_right = 536.0
+margin_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stats" type="VBoxContainer" parent="DebugStats"]
+margin_right = 536.0
+margin_bottom = 135.0

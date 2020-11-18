@@ -10,20 +10,20 @@ var thrust = v3
 
 var bullet_scene = preload("Bullet.tscn")
 
-
-const MAX_THRUST = 60
+const MAX_THRUST_TURN = 320
+const MAX_THRUST = 200
 const MAX_CAM_ANGLE = 30
 const DRAG_CONST = 1000
 
-func calc_force(thrust, pitch):
+func calc_force(thrust, pitch_dir):
     var speed = MAX_THRUST * (thrust)
-    var drag_coef = DRAG_CONST / speed / speed 
+    var drag_coef = DRAG_CONST / MAX_THRUST / MAX_THRUST  
     thrust = transform.basis.z * (-speed)
     drag = transform.basis.z * drag_coef
     lift = transform.basis.y * drag_coef
     
     force = thrust + drag + lift
-    torque = transform.basis.x * pitch
+    torque = global_transform.basis.x * pitch_dir * MAX_THRUST_TURN
 
 #    torque = transform.basis.y * w.z * rudder + transform.basis.z * w.z * ailerons - transform.basis.x * w.z * elevator
 func _integrate_forces(state):
