@@ -23,7 +23,7 @@ far = 800.0
 enabled = true
 
 [node name="Plane06" type="MeshInstance" parent="."]
-transform = Transform( 5, 0, 0, 0, 4.99864, 0.116752, 0, -0.116752, 4.99864, -10.5465, 57.9384, -30.8145 )
+transform = Transform( 5, 0, 0, 0, 4.99864, 0.116752, 0, -0.116752, 4.99864, -10.5465, 48.3796, -6.02519 )
 mesh = ExtResource( 4 )
 material/0 = ExtResource( 2 )
 
