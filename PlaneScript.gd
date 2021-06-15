@@ -10,7 +10,7 @@ var thrust = v3
 
 var bullet_scene = preload("Bullet.tscn")
 
-const MAX_THRUST_TURN = 150
+const MAX_THRUST_TURN = 5
 const MAX_THRUST = 1
 const MAX_CAM_ANGLE = 30
 const DRAG_CONST = 1
@@ -31,7 +31,8 @@ func calc_force(thrust, pitch_dir, roll_dir, yaw_dir):
 #    torque = transform.basis.y * w.z * rudder + transform.basis.z * w.z * ailerons - transform.basis.x * w.z * elevator
 func _integrate_forces(state):
     add_central_force(force)
-    add_torque(torque)
+    #add_torque(torque)
+    angular_velocity = torque
 
 func fire_weapon():
     var clone = bullet_scene.instance()

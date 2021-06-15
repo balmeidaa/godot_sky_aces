@@ -17,6 +17,8 @@ func _physics_process(delta):
     process_movement(delta)
     
 func process_inputs(delta):
+    pitch_dir = pitch_dir / (1 + delta)
+    roll_dir = roll_dir / (1 + delta)
     if Input.is_action_pressed("p1_fire"):
         $Plane.fire_weapon()
         input = 'fire'
@@ -32,7 +34,7 @@ func process_inputs(delta):
     if Input.is_action_pressed("p1_pitch_down"):
         pitch_dir -= delta
         input = 'down'
-     if Input.is_action_pressed("p1_roll_left"):
+    if Input.is_action_pressed("p1_roll_left"):
         roll_dir += delta
         input = 'yaw left'
     if Input.is_action_pressed("p1_roll_right"):
